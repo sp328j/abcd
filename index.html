@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박상진 | 토목 사업관리 & 리스크 엔지니어링 포트폴리오</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font and Noto Sans KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans KR', 'sans-serif'],
+                    },
+                    colors: {
+                        premium: {
+                            50: '#f4f6fa',
+                            100: '#e9ecf4',
+                            200: '#ccd4e6',
+                            600: '#2c3e50',
+                            700: '#1a252f',
+                            800: '#111822',
+                            900: '#0b0f19',
+                            gold: '#d4af37',      // Premium Gold Accent
+                            goldHover: '#c19e2e',
+                            emerald: '#059669',   // Trust & Finance Emerald
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Modern Glassmorphism & High-end effects */
+        .glass-premium {
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .light .glass-premium {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .financial-grid {
+            background-color: #0b0f19;
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.02) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .light .financial-grid {
+            background-color: #f8fafc;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .emerald-gradient-text {
+            background: linear-gradient(135deg, #a7f3d0 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Light mode text color override to solid black */
+        .light .hero-main-title {
+            color: #000000 !important;
+        }
+        .light .hero-main-title .gold-gradient-text {
+            background: none !important;
+            -webkit-text-fill-color: #000000 !important;
+            color: #000000 !important;
+        }
+    </style>
+</head>
+<body class="bg-premium-900 text-slate-100 font-sans transition-colors duration-300 light:bg-slate-50 light:text-slate-900">
+
+    <header class="fixed top-0 w-full z-50 glass-premium shadow-lg transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 bg-gradient-to-br from-premium-gold to-yellow-600 flex items-center justify-center rounded-xl shadow-lg text-premium-900 font-extrabold text-lg tracking-wider">
+                        PSJ
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl text-white light:text-premium-900 block tracking-wider">박 상 진</span>
+                        <span class="text-[10px] text-premium-gold font-semibold uppercase tracking-widest block -mt-1">Project Control & Risk Advisor</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-300 light:text-slate-600">
+                    <a href="#about" class="hover:text-premium-gold transition-colors">프로필</a>
+                    <a href="#skills" class="hover:text-premium-gold transition-colors">핵심역량</a>
+                    <a href="#lab" class="hover:text-premium-gold transition-colors">공정·재보험 시뮬레이터</a>
+                    <a href="#projects" class="hover:text-premium-gold transition-colors">실무 프로젝트</a>
+                    <a href="#experience" class="hover:text-premium-gold transition-colors">경력 및 활동</a>
+                    <a href="#contact" class="hover:text-premium-gold transition-colors">연락처</a>
+                    <a href="https://padlet.com/mariebeatman/my-funky-padlet-7u7zqxpxood3fopx" target="_blank" class="text-premium-gold hover:text-yellow-500 font-bold transition-colors flex items-center gap-1">
+                        방명록 <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
+                    </a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Light/Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2.5 rounded-xl hover:bg-slate-800/50 light:hover:bg-slate-200/50 transition-colors text-premium-gold" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon text-lg block light:hidden"></i>
+                        <i class="fa-solid fa-sun text-lg hidden light:block"></i>
+                    </button>
+                    <!-- Elegant Custom Resume Downloader -->
+                    <button onclick="openDownloadModal()" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-premium-gold to-yellow-600 hover:from-yellow-500 hover:to-premium-gold text-premium-900 text-xs uppercase tracking-wider font-extrabold py-2.5 px-5 rounded-xl shadow-lg hover:shadow-premium-gold/10 transition-all">
+                        <i class="fa-solid fa-file-invoice-dollar"></i> 포트폴리오 PDF
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="menu-toggle" class="md:hidden p-2 rounded-lg hover:bg-slate-800 text-slate-200 light:text-slate-800">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-premium border-t border-slate-800 light:border-slate-200 animate-fadeIn">
+            <div class="px-4 pt-2 pb-6 space-y-3 font-semibold text-sm">
+                <a href="#about" class="block py-2.5 px-3 rounded-lg hover:bg-slate-800/50">프로필</a>
+                <a href="#skills" class="block py-2.5 px-3 rounded-lg hover:bg-slate-800/50">핵심역량</a>
+                <a href="#lab" class="block py-2.5 px-3 rounded-lg hover:bg-slate-800/50">공정·재보험 시뮬레이터</a>
+                <a href="#projects" class="block py-2.5 px-3 rounded-lg hover:bg-slate-800/50">실무 프로젝트</a>
+                <a href="#experience" class="block py-2.5 px-3 rounded-lg hover:bg-slate-800/50">경력 및 활동</a>
+                <a href="#contact" class="block py-2.5 px-3 rounded-lg hover:bg-slate-800/50">연락처</a>
+                <a href="https://padlet.com/mariebeatman/my-funky-padlet-7u7zqxpxood3fopx" target="_blank" class="block py-2.5 px-3 rounded-lg hover:bg-slate-800/50 text-premium-gold font-bold">
+                    방명록 <i class="fa-solid fa-up-right-from-square text-xs ml-1"></i>
+                </a>
+                <button onclick="openDownloadModal()" class="w-full text-center bg-gradient-to-r from-premium-gold to-yellow-600 text-premium-900 py-3 rounded-lg font-bold">
+                    <i class="fa-solid fa-file-invoice-dollar mr-2"></i> PDF 포트폴리오 다운로드
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative pt-32 pb-24 md:pb-36 overflow-hidden financial-grid">
+        <!-- Overlay decorative linear vector lines representing Financial Curves & Gantt Tracks -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 0,200 Q 300,450 600,150 T 1200,400 T 1800,100" fill="none" stroke="#d4af37" stroke-width="2" />
+                <path d="M 0,350 Q 400,100 800,400 T 1600,200" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="10 5" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/90 border border-premium-gold/30 text-premium-gold text-xs font-bold uppercase tracking-wider">
+                        <span class="w-2.5 h-2.5 rounded-full bg-premium-gold animate-pulse"></span>
+                        토목 공학 & 글로벌 사업관리·재보험 리스크의 융합
+                    </div>
+                    
+                    <h1 class="hero-main-title text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white transition-colors duration-300">
+                        인프라 가치를 관리하고,<br/>
+                        <span class="gold-gradient-text">금융적 리스크</span>를 설계하다.
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-slate-300 light:text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        반갑습니다. 토목공학과 경영 지식의 융합을 지향하며, 세계 최고의 프로젝트 일정 관리 프로그램인 **Primavera P6**를 적극 활용하여 대단위 시공 계획의 간섭과 Critical Path를 분석하고 공기 단축 및 추가 원가 통제 방안을 제안해 왔습니다.
+                    </p>
+                    
+                    <!-- Quick Specs Profile Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+                        <span class="bg-slate-950/80 border border-premium-gold/20 px-3.5 py-2 rounded-xl text-xs flex items-center gap-2 text-slate-200">
+                            <i class="fa-solid fa-network-wired text-premium-gold"></i> Primavera P6 실무 운용
+                        </span>
+                        <span class="bg-slate-950/80 border border-emerald-500/20 px-3.5 py-2 rounded-xl text-xs flex items-center gap-2 text-slate-200">
+                            <i class="fa-solid fa-handshake text-emerald-400"></i> EY한영 Consulting 인턴십 수료
+                        </span>
+                        <span class="bg-slate-950/80 border border-blue-400/20 px-3.5 py-2 rounded-xl text-xs flex items-center gap-2 text-slate-200">
+                            <i class="fa-solid fa-chart-line text-blue-400"></i> 건설신탁 & 재보험 리스크 모델링
+                        </span>
+                    </div>
+
+                    <!-- Call to Actions -->
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#lab" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-premium-gold to-yellow-600 hover:from-yellow-500 hover:to-premium-gold text-premium-900 font-extrabold py-4 px-8 rounded-xl shadow-xl transition-all text-sm tracking-wide">
+                            공정·리스크 분석 구동 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#projects" class="inline-flex items-center justify-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-slate-100 border border-slate-700 font-bold py-4 px-8 rounded-xl transition-all text-sm">
+                            <i class="fa-solid fa-layer-group text-premium-gold"></i> 실무 프로젝트 분석
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right (Interactive Gantt & Financial Risk Widget Mockup) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm sm:max-w-md bg-slate-950 border border-premium-gold/20 rounded-2xl p-6 shadow-2xl overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-premium-gold/5 rounded-full blur-3xl"></div>
+                        
+                        <!-- Terminal/Control style header -->
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                            <div class="flex gap-1.5">
+                                <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                            </div>
+                            <span class="text-[10px] font-mono text-slate-400">Primavera_P6_EVM_Module.log</span>
+                        </div>
+                        
+                        <!-- Primavera P6 and Reinsurance Live feed mock -->
+                        <div class="font-mono text-xs space-y-2">
+                            <p class="text-slate-500">// 글로벌 초대형 인프라 PPP 리스크 분석 모듈</p>
+                            <p class="text-slate-300"><span class="text-premium-gold">></span> Initialize Primavera.P6_Active_Track();</p>
+                            <p class="text-emerald-400">✓ Database Linked: "Giga_Project_Gantt_2026"</p>
+                            
+                            <div class="pl-4 border-l-2 border-emerald-500/30 space-y-1 my-2 text-slate-400">
+                                <p>- Planned Value (PV): <span class="text-white">$450.0M</span></p>
+                                <p>- Earned Value (EV): <span class="text-white">$455.2M</span></p>
+                                <p>- Cost Performance Index (CPI): <span class="text-emerald-400 font-bold">1.01 (Under Budget)</span></p>
+                                <p>- Schedule Performance (SPI): <span class="text-emerald-400 font-bold">1.02 (Ahead)</span></p>
+                            </div>
+                            
+                            <p class="text-slate-300"><span class="text-premium-gold">></span> Run Financial_Stress_Test(Risk_Scenario: 'Typhoon_PML');</p>
+                            <p class="text-yellow-400 animate-pulse">> Assessing Catastrophe Reinsurance Structure...</p>
+                            <p class="text-premium-gold font-bold">▶ Reinsurance Cedant Share: 85.0% ($382.5M)</p>
+                            <p class="text-slate-500">// 리스크 전가 완료. 원수사 보유 리스크(15%) 제한됨.</p>
+                        </div>
+                        
+                        <!-- Mini Gantt Visualization -->
+                        <div class="mt-6 p-4 bg-slate-900 rounded-xl border border-slate-800 flex flex-col gap-2">
+                            <div class="flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+                                <span>P6 Task Timeline</span>
+                                <span class="text-premium-gold">Critical Path (CP)</span>
+                            </div>
+                            <!-- Gantt Bar 1 -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-slate-400">
+                                    <span>Engineering & Design</span>
+                                    <span class="text-emerald-400">100%</span>
+                                </div>
+                                <div class="h-2 w-full bg-slate-950 rounded-full overflow-hidden">
+                                    <div class="h-full bg-emerald-500 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <!-- Gantt Bar 2 -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-slate-400">
+                                    <span>Financing & Trust Setup</span>
+                                    <span class="text-emerald-400">100%</span>
+                                </div>
+                                <div class="h-2 w-full bg-slate-950 rounded-full overflow-hidden">
+                                    <div class="h-full bg-emerald-500 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <!-- Gantt Bar 3 (Critical Path) -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-slate-400">
+                                    <span>Civil Substructure Construction</span>
+                                    <span class="text-premium-gold">Active</span>
+                                </div>
+                                <div class="h-2 w-full bg-slate-950 rounded-full overflow-hidden">
+                                    <div class="h-full bg-premium-gold rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-slate-950 border-t border-slate-900 light:bg-white light:border-slate-200 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-premium-gold font-extrabold mb-2">PROFESSIONAL PROFILE</h2>
+                <p class="text-3xl font-extrabold text-white light:text-premium-900 sm:text-4xl">인프라 생애주기의 금융·시간적 리스크를 지배하는 엔지니어</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-premium-gold to-yellow-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Profile Image & Contact Box -->
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-premium-gold to-yellow-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <div class="relative bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden light:bg-slate-100 light:border-slate-300">
+                            <img src="https://placehold.co/400x500/0f172a/ffffff?text=Park+Sangjin" alt="박상진 프로필 사진" class="w-full object-cover aspect-[4/5] object-center" onerror="this.src='https://placehold.co/400x500/0b0f19/ffffff?text=RISK+CONSULTANT'">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-6 text-white">
+                                <h3 class="text-xl font-extrabold tracking-wide">박상진 (Park Sangjin)</h3>
+                                <p class="text-xs text-premium-gold font-semibold uppercase tracking-wider">Project Control & Risk Advisor</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Professional Info Spec Sheet -->
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl space-y-4 light:bg-slate-50 light:border-slate-200">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-slate-400 flex items-center gap-2"><i class="fa-solid fa-envelope w-4 text-premium-gold"></i> 이메일</span>
+                            <span class="font-semibold text-slate-200 light:text-slate-800">sangjin328@naver.com</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-slate-400 flex items-center gap-2"><i class="fa-solid fa-phone w-4 text-premium-gold"></i> 연락처</span>
+                            <span class="font-semibold text-slate-200 light:text-slate-800">010-8765-4321</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-slate-400 flex items-center gap-2"><i class="fa-solid fa-location-dot w-4 text-premium-gold"></i> 활동지</span>
+                            <span class="font-semibold text-slate-200 light:text-slate-800">서울특별시 종로구 / 여의도</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-slate-400 flex items-center gap-2"><i class="fa-solid fa-briefcase w-4 text-premium-gold"></i> 희망분야</span>
+                            <span class="font-bold text-premium-gold">사업관리 / 신탁금융 / 재보험</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic background and Vision -->
+                <div class="lg:col-span-8 space-y-8">
+                    <div class="prose prose-slate dark:prose-invert max-w-none">
+                        <h3 class="text-2xl font-extrabold text-white light:text-premium-900">"인프라의 물리적 견고함을 넘어, 금융과 공정의 안전판을 세웁니다"</h3>
+                        <p class="text-slate-300 light:text-slate-600 leading-relaxed mt-4">
+                            대형 토목 프로젝트는 정교한 구조해석만큼이나 **철저한 사업 일정 관리(Project Control)**와 발생 가능한 재무 리스크를 예측하는 **금융 구조 설계**가 핵심입니다.
+                        </p>
+                        <p class="text-slate-300 light:text-slate-600 leading-relaxed mt-2">
+                            저는 토목공학과 경영 지식의 융합을 지향하며, 세계 최고의 프로젝트 일정 관리 프로그램인 **Primavera P6**를 적극 활용하여 대단위 시공 계획의 간섭과 Critical Path를 분석하고 공기 단축 및 추가 원가 통제 방안을 제안해 왔습니다.
+                        </p>
+                        <p class="text-slate-300 light:text-slate-600 leading-relaxed mt-2">
+                            또한, **EY한영 인턴십** 동안 인프라 및 신재생에너지 컨설팅 실무 부서에서 대형 인프라 딜(Deal)의 사업성 평가 모델 검토에 참여했습니다. 이 경험을 바탕으로 건설신탁사의 개발 관리와, 조단위 국가 인프라의 기후·재난 손실 리스크를 전가하는 글로벌 재보험(Reinsurance) 시장에서 리스크 언더라이팅과 구조화 전략가로 활약하고자 합니다.
+                        </p>
+                    </div>
+
+                    <!-- Core Value Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                        <!-- Card 1 -->
+                        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/40 flex gap-4 light:bg-slate-50 light:border-slate-200">
+                            <div class="w-12 h-12 rounded-lg bg-premium-900 text-premium-gold border border-premium-gold/20 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock-rotate-left text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-white light:text-premium-900">Primavera P6 기반 공정 제어</h4>
+                                <p class="text-xs text-slate-400 light:text-slate-500 mt-1">
+                                    스케줄 지연 리스크를 사전에 식별하고, EVM(획득가치관리) 프레임워크를 이행하여 인건비와 자재 변동비 오차를 최소화합니다.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/40 flex gap-4 light:bg-slate-50 light:border-slate-200">
+                            <div class="w-12 h-12 rounded-lg bg-premium-900 text-emerald-400 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-coins text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-white light:text-premium-900">부동산/건설 신탁 금융 이해도</h4>
+                                <p class="text-xs text-slate-400 light:text-slate-500 mt-1">
+                                    토지 신탁, 책임준공확약 보증, 담보 및 관리형 신탁 전반의 리스크 메커니즘을 토목 시공 엔지니어의 시각으로 분석합니다.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/40 flex gap-4 light:bg-slate-50 light:border-slate-200">
+                            <div class="w-12 h-12 rounded-lg bg-premium-900 text-blue-400 border border-blue-500/20 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-shield-halved text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-white light:text-premium-900">글로벌 재보험 및 재해 리스크</h4>
+                                <p class="text-xs text-slate-400 light:text-slate-500 mt-1">
+                                    대형 자연재해(풍수해, 지진 등)가 국가 기간 시설에 미치는 PML을 산출하고 재보험 최적 출재(Ceding) 한도를 분석합니다.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/40 flex gap-4 light:bg-slate-50 light:border-slate-200">
+                            <div class="w-12 h-12 rounded-lg bg-premium-900 text-yellow-500 border border-yellow-500/20 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-magnifying-glass-chart text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-white light:text-premium-900">EY한영 인턴 기반 전략 컨설팅</h4>
+                                <p class="text-xs text-slate-400 light:text-slate-500 mt-1">
+                                    글로벌 Big 4 컨설팅 하우스에서 다져진 구조적 문제 분석 및 고품질 이사회/제안서 보고 문서를 작성합니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 bg-slate-900 light:bg-slate-100 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-premium-gold font-extrabold mb-2">CORE CAPABILITIES</h2>
+                <p class="text-3xl font-extrabold text-white light:text-premium-900 sm:text-4xl">특화된 실무 기술 분석</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-premium-gold to-yellow-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Skills Category Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skill Category 1 -->
+                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl shadow-xl light:bg-white light:border-slate-200">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 rounded-xl bg-slate-900 text-premium-gold border border-premium-gold/20">
+                            <i class="fa-solid fa-network-wired text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-white light:text-premium-900">Project Controls & 공정</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-300 light:text-slate-700">Primavera P6 (일정 및 공정 통합)</span>
+                                <span class="font-mono text-xs text-premium-gold font-bold">95%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-850 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-premium-gold to-yellow-500 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-2">WBS 체계 구축, Critical Path 분석, 액티비티 관계 가시화 및 일정 최적화</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-300 light:text-slate-700">EVMS (획득가치관리 분석)</span>
+                                <span class="font-mono text-xs text-premium-gold font-bold">90%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-850 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-premium-gold to-yellow-500 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-2">SV, CV, SPI, CPI 및 완공 후 원가 추산치(EAC) 종합 정량화</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Category 2 -->
+                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl shadow-xl light:bg-white light:border-slate-200">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 rounded-xl bg-slate-900 text-emerald-400 border border-emerald-500/20">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-white light:text-premium-900">금융 / 리스크공학</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-300 light:text-slate-700">글로벌 재보험 underwriting</span>
+                                <span class="font-mono text-xs text-emerald-400 font-bold">85%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-850 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-2">인프라 대물 피해(MD) 및 기업 휴지(BI) 손실 리스크 평가 및 요율 자문</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-300 light:text-slate-700">부동산 신탁 및 사업성 분석</span>
+                                <span class="font-mono text-xs text-emerald-400 font-bold">80%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-850 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="width: 80%"></div>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-2">차입형/대리사무형 개발 신탁 구조화 및 PF 대출 금융 구조 분석</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Category 3 -->
+                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl shadow-xl light:bg-white light:border-slate-200">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 rounded-xl bg-slate-900 text-blue-400 border border-blue-500/20">
+                            <i class="fa-solid fa-lightbulb text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-white light:text-premium-900">전략 컨설팅 / 통계</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-300 light:text-slate-700">EY Business Case & 분석</span>
+                                <span class="font-mono text-xs text-blue-400 font-bold">90%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-850 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-2">MECE 구조화적 문제 정의, 시장 및 경쟁 분석 보고서 작성 가독성 극대화</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-300 light:text-slate-700">Financial Modeling (Excel, SQL)</span>
+                                <span class="font-mono text-xs text-blue-400 font-bold">85%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-850 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-2">DCF(현금흐름할인) 및 NPV/IRR 타당성 산출 엑셀 템플릿 설계</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="lab" class="py-24 bg-slate-950 text-white relative overflow-hidden financial-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="px-4 py-1.5 rounded-full bg-slate-900 border border-premium-gold/30 text-premium-gold text-xs font-bold tracking-widest uppercase">FINANCIAL PM LAB</span>
+                <h2 class="text-3xl font-extrabold sm:text-4xl mt-3">Primavera P6 & 재보험 리스크 시뮬레이터</h2>
+                <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                    본 시뮬레이터는 대형 토목공사의 공정 지연에 따른 초과 비용(EAC)과,<br/>
+                    자연재해 손실에 대비한 글로벌 재보험사(Reinsurance)로의 리스크 전가 구조를 실시간 시뮬레이션합니다.
+                </p>
+            </div>
+
+            <!-- Simulator Container Card -->
+            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left Control Panel (5 columns) -->
+                    <div class="lg:col-span-5 space-y-6 bg-slate-950 p-6 rounded-2xl border border-slate-800">
+                        <h3 class="font-extrabold text-lg text-premium-gold border-b border-slate-800 pb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-premium-gold"></i> 시뮬레이션 매개변수 설정
+                        </h3>
+                        
+                        <!-- Project Scale (BAC) -->
+                        <div>
+                            <div class="flex justify-between items-center text-xs text-slate-400 mb-2">
+                                <span class="font-bold uppercase tracking-wider">총 사업 예산 (Budget BAC)</span>
+                                <span class="font-mono text-premium-gold font-bold" id="val-proj-bac">3,000 억 원</span>
+                            </div>
+                            <input type="range" id="proj-bac" min="500" max="10000" step="100" value="3000" class="w-full accent-premium-gold bg-slate-800 h-1.5 rounded-lg appearance-none cursor-pointer" oninput="updateControlsSimulator()">
+                        </div>
+
+                        <!-- Schedule Performance Index (SPI) -->
+                        <div>
+                            <div class="flex justify-between items-center text-xs text-slate-400 mb-2">
+                                <span class="font-bold uppercase tracking-wider">공정 지연 계수 (P6 SPI 지수)</span>
+                                <span class="font-mono text-premium-gold font-bold" id="val-proj-spi">1.00 (On-Time)</span>
+                            </div>
+                            <input type="range" id="proj-spi" min="0.5" max="1.5" step="0.05" value="1.0" class="w-full accent-premium-gold bg-slate-800 h-1.5 rounded-lg appearance-none cursor-pointer" oninput="updateControlsSimulator()">
+                        </div>
+
+                        <!-- PML Factor (Probable Maximum Loss) -->
+                        <div>
+                            <div class="flex justify-between items-center text-xs text-slate-400 mb-2">
+                                <span class="font-bold uppercase tracking-wider">최대 예상 재해 손실율 (PML Factor)</span>
+                                <span class="font-mono text-premium-gold font-bold" id="val-proj-pml">20 %</span>
+                            </div>
+                            <input type="range" id="proj-pml" min="5" max="80" step="5" value="20" class="w-full accent-premium-gold bg-slate-800 h-1.5 rounded-lg appearance-none cursor-pointer" oninput="updateControlsSimulator()">
+                        </div>
+
+                        <!-- Reinsurance Retention Ratio -->
+                        <div>
+                            <div class="flex justify-between items-center text-xs text-slate-400 mb-2">
+                                <span class="font-bold uppercase tracking-wider">원수사 리스크 자가 보유율 (Retention)</span>
+                                <span class="font-mono text-premium-gold font-bold" id="val-proj-retention">15 %</span>
+                            </div>
+                            <input type="range" id="proj-retention" min="5" max="95" step="5" value="15" class="w-full accent-premium-gold bg-slate-800 h-1.5 rounded-lg appearance-none cursor-pointer" oninput="updateControlsSimulator()">
+                        </div>
+
+                        <!-- Results Dashboard -->
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-800/80">
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-center">
+                                <span class="text-[10px] text-slate-400 block font-bold uppercase">공기 초과 예측 (EAC)</span>
+                                <span class="text-base font-bold font-mono text-red-400 mt-1 block" id="res-proj-eac">3,000 억</span>
+                            </div>
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-center">
+                                <span class="text-[10px] text-slate-400 block font-bold uppercase">재보험 전가 손실액 (Ceded)</span>
+                                <span class="text-base font-bold font-mono text-emerald-400 mt-1 block" id="res-proj-ceded">510 억</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Analytical Output/Canvas (7 columns) -->
+                    <div class="lg:col-span-7 flex flex-col gap-4">
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-premium-gold animate-ping"></span> 실시간 공정 및 재보험 레이어 도해</span>
+                            <span>EAC = BAC / SPI | PML = BAC * Risk %</span>
+                        </div>
+                        
+                        <!-- Graph Canvas Frame -->
+                        <div class="bg-slate-950 rounded-2xl border border-slate-800 p-4 aspect-[4/3] w-full flex items-center justify-center relative">
+                            <canvas id="control-canvas" class="w-full h-full block bg-slate-950"></canvas>
+                        </div>
+                        
+                        <!-- Analytical Notes -->
+                        <div class="bg-slate-950/40 p-5 rounded-2xl border border-slate-800/60 text-xs text-slate-400 space-y-2 leading-relaxed">
+                            <p><strong class="text-premium-gold">※ PM 및 파이낸셜 코멘터리:</strong></p>
+                            <p>
+                                1. 공정 지연지수(SPI)가 1.0 미만으로 떨어지면 Primavera P6 상의 크리티컬 패스 병목이 의심되며 최종 완공원가(EAC)가 예산을 초과하게 됩니다. <br/>
+                                2. 대재해 손실액(PML) 중 원수 신탁사가 보유하는 한도 외의 금액은 스위스재보험(Swiss Re), 뮌헨재보험(Munich Re) 등 글로벌 시장으로 출재(Ceding)되어 프로젝트의 재무 영속성을 안전하게 담보합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-white text-slate-900 light:bg-slate-950 light:text-slate-100 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-premium-gold font-extrabold mb-2">EXPERIENCE PORTFOLIO</h2>
+                <p class="text-3xl font-extrabold text-slate-900 light:text-white sm:text-4xl">보유 프로젝트 및 자문 성과</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-premium-gold to-yellow-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="filterProjects('all')" class="proj-btn px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-premium-700 text-white shadow-lg" data-target="all">전체보기</button>
+                <button onclick="filterProjects('consulting')" class="proj-btn px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-slate-100 text-slate-700 light:bg-slate-800 light:text-slate-300 hover:bg-slate-200" data-target="consulting">컨설팅 & 타당성 자문</button>
+                <button onclick="filterProjects('pm')" class="proj-btn px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-slate-100 text-slate-700 light:bg-slate-800 light:text-slate-300 hover:bg-slate-200" data-target="pm">공정관리 & PM</button>
+                <button onclick="filterProjects('risk')" class="proj-btn px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-slate-100 text-slate-700 light:bg-slate-800 light:text-slate-300 hover:bg-slate-200" data-target="risk">신탁금융 & 재보험</button>
+            </div>
+
+            <!-- Cards Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Card 1: Consulting -->
+                <div class="proj-card bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all light:bg-slate-900 light:border-slate-800" data-category="consulting">
+                    <div class="relative h-52 overflow-hidden bg-premium-900">
+                        <img src="https://placehold.co/600x400/1e293b/ffffff?text=EY+Consulting+Infra" alt="EY한영 컨설팅" class="w-full h-full object-cover opacity-90">
+                        <span class="absolute top-4 right-4 bg-premium-gold text-premium-900 text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg shadow">EY한영 인턴십</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <span class="text-xs text-premium-gold font-extrabold uppercase tracking-wider">Business Consulting</span>
+                        <h3 class="font-extrabold text-lg text-slate-900 light:text-white leading-snug">대형 민관합작투자(PPP) 도로 사업 타당성 및 재무 모델 가치 자문</h3>
+                        <p class="text-xs text-slate-500 light:text-slate-400 line-clamp-3">
+                            기획재정부 예비타당성조사 지침에 의거, 대규모 도로 건설 사업의 편익산정(VOT), 장기 현금 흐름 및 민감도 분석을 수립하고, 컨설팅 자문 이사회용 구조 보고 문서를 리드했습니다.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="bg-white border border-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded light:bg-slate-800 light:border-slate-700 light:text-slate-300">DCF 모델링</span>
+                            <span class="bg-white border border-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded light:bg-slate-800 light:border-slate-700 light:text-slate-300">사업성평가</span>
+                        </div>
+                        <button onclick="showProjectDetail('proj-consulting')" class="w-full mt-4 text-center border-2 border-premium-gold text-premium-gold hover:bg-premium-gold hover:text-premium-900 text-xs font-bold py-3 rounded-xl transition-all">상세 분석 보고서</button>
+                    </div>
+                </div>
+
+                <!-- Card 2: PM -->
+                <div class="proj-card bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all light:bg-slate-900 light:border-slate-800" data-category="pm">
+                    <div class="relative h-52 overflow-hidden bg-premium-900">
+                        <img src="https://placehold.co/600x400/0f172a/ffffff?text=Primavera+P6+Scheduling" alt="Primavera P6" class="w-full h-full object-cover opacity-90">
+                        <span class="absolute top-4 right-4 bg-amber-600 text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg shadow">Primavera P6</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <span class="text-xs text-premium-gold font-extrabold uppercase tracking-wider">Project Control</span>
+                        <h3 class="font-extrabold text-lg text-slate-900 light:text-white leading-snug">복합 환승 센터 및 터널 건설 공정 스케줄링(Critical Path) 설계</h3>
+                        <p class="text-xs text-slate-500 light:text-slate-400 line-clamp-3">
+                            Primavera P6를 직접 활용하여 토공사, 터널 굴착, 구체공사 등 수천 개 선행 액티비티를 연결하여 단일 통합 네트워크를 수립하고 마일스톤 준수를 위한 자원 배분 분석을 전담 설계했습니다.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="bg-white border border-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded light:bg-slate-800 light:border-slate-700 light:text-slate-300">P6 Baseline</span>
+                            <span class="bg-white border border-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded light:bg-slate-800 light:border-slate-700 light:text-slate-300">자원 최적화</span>
+                        </div>
+                        <button onclick="showProjectDetail('proj-pm')" class="w-full mt-4 text-center border-2 border-premium-gold text-premium-gold hover:bg-premium-gold hover:text-premium-900 text-xs font-bold py-3 rounded-xl transition-all">상세 분석 보고서</button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Risk -->
+                <div class="proj-card bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all light:bg-slate-900 light:border-slate-800" data-category="risk">
+                    <div class="relative h-52 overflow-hidden bg-premium-900">
+                        <img src="https://placehold.co/600x400/0b0f19/ffffff?text=Reinsurance+Risk+Layer" alt="재보험 리스크" class="w-full h-full object-cover opacity-90">
+                        <span class="absolute top-4 right-4 bg-emerald-700 text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg shadow">신탁 & 재보험</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <span class="text-xs text-premium-gold font-extrabold uppercase tracking-wider">Risk Structuring</span>
+                        <h3 class="font-extrabold text-lg text-slate-900 light:text-white leading-snug">건설 개발 신탁 사업의 책임준공 리스크 및 재보험 요율 분석 모델</h3>
+                        <p class="text-xs text-slate-500 light:text-slate-400 line-clamp-3">
+                            시공사의 디폴트 리스크를 보전하기 위한 건설 부동산 신탁사의 수수료 한계를 산출하고, 대형 교량·해상 풍력 발전 사업의 재해 피해 PML 분석 및 초과손실재보험(XOL) 설계 시나리오를 고안했습니다.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="bg-white border border-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded light:bg-slate-800 light:border-slate-700 light:text-slate-300">PML 시나리오</span>
+                            <span class="bg-white border border-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded light:bg-slate-800 light:border-slate-700 light:text-slate-300">XOL Layering</span>
+                        </div>
+                        <button onclick="showProjectDetail('proj-risk')" class="w-full mt-4 text-center border-2 border-premium-gold text-premium-gold hover:bg-premium-gold hover:text-premium-900 text-xs font-bold py-3 rounded-xl transition-all">상세 분석 보고서</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 bg-slate-950 text-slate-100 light:bg-slate-100 light:text-slate-900 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-premium-gold font-extrabold mb-2">CAREER TIMELINE</h2>
+                <p class="text-3xl font-extrabold text-white light:text-premium-900 sm:text-4xl">학업 활동 및 경력 사항</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-premium-gold to-yellow-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Timeline Structure -->
+            <div class="relative border-l border-slate-800 light:border-slate-300 max-w-3xl mx-auto pl-6 sm:pl-10 space-y-12">
+                <!-- Golden/Emerald Gradient Track -->
+                <div class="absolute top-0 bottom-0 left-0 w-[3px] bg-gradient-to-b from-premium-gold via-emerald-500 to-blue-500"></div>
+
+                <!-- EY Han Young Internship -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] sm:-left-[45px] w-6 h-6 rounded-full bg-premium-900 border-4 border-premium-gold light:border-slate-100 flex items-center justify-center text-[9px] text-premium-gold">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-lg light:bg-white light:border-slate-200">
+                        <span class="inline-block bg-slate-950 border border-premium-gold/30 text-premium-gold text-[10px] font-extrabold px-3 py-1.5 rounded-lg mb-4 uppercase tracking-widest">2025.07 - 2025.12 (6개월)</span>
+                        <h3 class="text-xl font-extrabold text-white light:text-premium-900">EY한영 (Ernst & Young) 전략·재무컨설팅부 인턴 수료</h3>
+                        <p class="text-sm text-slate-300 light:text-slate-600 mt-3 leading-relaxed">
+                            - 글로벌 자본 프로젝트 & 인프라 자문 본부에서 민관합작(PPP) 및 신재생에너지 발전 사업 타당성 정량 정성 가치 모형 분석 보조.<br/>
+                            - 대정부 제안서 요약본 구성 및 가상 거대 사업 리스크 관리 자문 이사회 슬라이드 덱 40여 장 단독 리드 구성.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Primavera P6 Professional Program -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] sm:-left-[45px] w-6 h-6 rounded-full bg-premium-900 border-4 border-premium-gold light:border-slate-100 flex items-center justify-center text-[9px] text-premium-gold">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-lg light:bg-white light:border-slate-200">
+                        <span class="inline-block bg-slate-950 border border-premium-gold/30 text-premium-gold text-[10px] font-extrabold px-3 py-1.5 rounded-lg mb-4 uppercase tracking-widest">2024.11 - 2025.02</span>
+                        <h3 class="text-xl font-extrabold text-white light:text-premium-900">Oracle Primavera P6 전문 자격 실무 과정 수료</h3>
+                        <p class="text-sm text-slate-300 light:text-slate-600 mt-3 leading-relaxed">
+                            - 오라클 공인 교육기관 수료, EVMS 획득가치 산출 모듈 및 다중 가치 자원 배정 프로세스 마스터.<br/>
+                            - 대규모 토목공정 모사 2,000 액티비티 Baseline 분석 및 지연 클레임 방어를 위한 지연 영향 분석(Delay Impact Analysis) 프로젝트 수행.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Civil Engineering Education -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] sm:-left-[45px] w-6 h-6 rounded-full bg-premium-900 border-4 border-premium-gold light:border-slate-100 flex items-center justify-center text-[9px] text-premium-gold">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-lg light:bg-white light:border-slate-200">
+                        <span class="inline-block bg-slate-950 border border-premium-gold/30 text-premium-gold text-[10px] font-extrabold px-3 py-1.5 rounded-lg mb-4 uppercase tracking-widest">2019.03 - 2026.02</span>
+                        <h3 class="text-xl font-extrabold text-white light:text-premium-900">국내 명문대학 토목공학과 학사 학위 취득</h3>
+                        <p class="text-sm text-slate-300 light:text-slate-600 mt-3 leading-relaxed">
+                            - **전공 학점:** 4.21 / 4.50<br/>
+                            - **집중 이수분야:** 토목시공관리학(PM), 수자원 재해공학, 수치해석, 건설계획법, 부동산투자론 및 금융 기획.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-white text-slate-900 light:bg-slate-950 light:text-slate-100 transition-colors relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-premium-gold font-extrabold mb-2">PARTNER INQUIRY</h2>
+                <p class="text-3xl font-extrabold text-slate-900 light:text-white sm:text-4xl">미래 인프라 파이낸싱과 공정 혁신을 함께할 동반자를 찾습니다</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-premium-gold to-yellow-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-12 light:bg-slate-900 light:border-slate-800">
+                
+                <!-- Contact Info left -->
+                <div class="md:col-span-5 bg-slate-950 text-white p-8 flex flex-col justify-between financial-grid relative">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-extrabold text-premium-gold">박 상 진</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            인프라 금융신탁 설계, 해외 인프라 원가 통제 PM(Primavera P6), 글로벌 재보험 언더라이팅 및 리스크 어드바이저직 등 다양한 직무 제안을 환영합니다.
+                        </p>
+                        
+                        <div class="space-y-4 pt-4 text-xs">
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <i class="fa-solid fa-phone text-premium-gold text-sm w-4"></i>
+                                <span>010-8765-4321</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <i class="fa-solid fa-envelope text-premium-gold text-sm w-4"></i>
+                                <span>sangjin328@naver.com</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <i class="fa-solid fa-building text-premium-gold text-sm w-4"></i>
+                                <span>EY한영 컨설팅 인턴 및 P6 전문가</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Social Links -->
+                    <div class="flex gap-4 pt-8 md:pt-0">
+                        <a href="#" onclick="showCustomAlert('kakao'); return false;" class="w-10 h-10 rounded-xl bg-slate-900 hover:bg-slate-800 flex items-center justify-center text-yellow-400 border border-slate-800 transition-colors"><i class="fa-solid fa-comment text-sm"></i></a>
+                        <a href="#" onclick="showCustomAlert('linkedin'); return false;" class="w-10 h-10 rounded-xl bg-slate-900 hover:bg-slate-800 flex items-center justify-center text-blue-400 border border-slate-800 transition-colors"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="#" onclick="showCustomAlert('github'); return false;" class="w-10 h-10 rounded-xl bg-slate-900 hover:bg-slate-800 flex items-center justify-center text-slate-200 border border-slate-800 transition-colors"><i class="fa-brands fa-github text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form right -->
+                <form id="contact-form" onsubmit="handleContactSubmit(event)" class="md:col-span-7 p-8 space-y-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">인사담당자 / 귀사명</label>
+                            <input type="text" id="contact-name" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-premium-gold focus:outline-none dark:text-slate-900" placeholder="홍길동 실장">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">회신 연락처</label>
+                            <input type="text" id="contact-phone" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-premium-gold focus:outline-none dark:text-slate-900" placeholder="010-0000-0000">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">회신 이메일</label>
+                        <input type="email" id="contact-email" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-premium-gold focus:outline-none dark:text-slate-900" placeholder="hr@firm.com">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">제안 / 문의 메시지</label>
+                        <textarea id="contact-msg" rows="4" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-premium-gold focus:outline-none dark:text-slate-900" placeholder="채용 포지션 자문 의뢰나 커피챗 미팅 제안을 간략하게 작성 부탁드립니다."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-premium-gold to-yellow-600 hover:from-yellow-500 hover:to-premium-gold text-premium-900 font-extrabold py-3.5 px-6 rounded-xl shadow-lg transition-all text-xs tracking-wider uppercase">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> 리스크 제안서 전송
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-500 py-12 border-t border-slate-900 light:bg-slate-900 light:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="font-extrabold text-xl text-white block">박상진 | Park Sangjin</span>
+                <span class="text-xs text-slate-400">토목 공정 제어 & 글로벌 리스크 파이낸셜 엔지니어링 전문가</span>
+            </div>
+            <div class="text-xs text-slate-400 text-center sm:text-right">
+                <p>© 2026 Park Sangjin. All rights reserved.</p>
+                <p class="mt-1">Designed with Primavera P6 & EVMS & Financial Trust Structuring frameworks.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Detail Dynamic Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <h3 class="font-extrabold text-xl text-white" id="modal-title">상세 보고서</h3>
+                <button onclick="closeProjectModal()" class="p-2 text-slate-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-6" id="modal-body">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Toast (Temporary notification) -->
+    <div id="toast-message" class="fixed bottom-6 right-6 z-50 bg-emerald-600 text-white font-bold px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 transition-transform duration-300 translate-y-24">
+        <i class="fa-solid fa-circle-check text-xl text-white"></i>
+        <span id="toast-text">성공적으로 발송되었습니다.</span>
+    </div>
+
+    <!-- Generic Dialog Alert Modal -->
+    <div id="alert-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 border border-premium-gold/30 p-6 rounded-2xl max-w-sm w-full text-center space-y-4">
+            <div class="w-12 h-12 bg-premium-900 rounded-full flex items-center justify-center mx-auto text-premium-gold border border-premium-gold/25 text-xl">
+                <i class="fa-solid fa-circle-info" id="alert-icon"></i>
+            </div>
+            <h4 class="font-extrabold text-white text-lg" id="alert-title">안내</h4>
+            <p class="text-xs text-slate-300 leading-relaxed" id="alert-body">설명</p>
+            <button onclick="closeAlertModal()" class="bg-premium-gold hover:bg-premium-goldHover text-premium-900 text-xs font-bold px-6 py-2.5 rounded-xl w-full uppercase transition-colors">확인</button>
+        </div>
+    </div>
+
+    <script>
+        // Theme initialization & switching logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        
+        if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.add('light');
+        } else {
+            document.documentElement.classList.remove('light');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('light')) {
+                document.documentElement.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            }
+            updateControlsSimulator();
+        });
+
+        // Mobile Menu logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            }
+        });
+
+        // Header glass control on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 20) {
+                header.classList.add('py-0', 'shadow-2xl');
+            } else {
+                header.classList.remove('py-0', 'shadow-2xl');
+            }
+        });
+
+        // Filter Projects grid logic
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.proj-card');
+            const buttons = document.querySelectorAll('.proj-btn');
+            
+            buttons.forEach(btn => {
+                const target = btn.getAttribute('data-target');
+                if (target === category) {
+                    btn.className = "proj-btn px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-premium-700 text-white shadow-lg";
+                } else {
+                    btn.className = "proj-btn px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-slate-100 text-slate-700 light:bg-slate-800 light:text-slate-300 hover:bg-slate-200";
+                }
+            });
+
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'block';
+                    card.classList.add('animate-fadeIn');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Custom Modal Alert logic (Replacing standard alert())
+        function showCustomAlert(type) {
+            const alertModal = document.getElementById('alert-modal');
+            const alertIcon = document.getElementById('alert-icon');
+            const alertTitle = document.getElementById('alert-title');
+            const alertBody = document.getElementById('alert-body');
+
+            if (type === 'kakao') {
+                alertIcon.className = "fa-solid fa-comments";
+                alertTitle.innerText = "카카오톡 연결";
+                alertBody.innerText = "박상진 님의 가상 카카오톡 오픈 프로필(ID: PSJ_PM_Risk) 데모입니다.";
+            } else if (type === 'linkedin') {
+                alertIcon.className = "fa-brands fa-linkedin-in";
+                alertTitle.innerText = "LinkedIn 연결";
+                alertBody.innerText = "글로벌 비즈니스 및 컨설팅 네트워킹을 위한 링크드인 연결 프로필 이동 데모입니다.";
+            } else if (type === 'github') {
+                alertIcon.className = "fa-brands fa-github";
+                alertTitle.innerText = "GitHub 연결";
+                alertBody.innerText = "P6 및 금융 모델링 알고리즘 백업을 수록한 깃허브 가상 연결 데모입니다.";
+            } else {
+                alertIcon.className = "fa-solid fa-circle-info";
+                alertTitle.innerText = "알림";
+                alertBody.innerText = type;
+            }
+
+            alertModal.classList.remove('hidden');
+            setTimeout(() => {
+                alertModal.classList.add('opacity-100');
+            }, 10);
+        }
+
+        function closeAlertModal() {
+            const alertModal = document.getElementById('alert-modal');
+            alertModal.classList.remove('opacity-100');
+            setTimeout(() => {
+                alertModal.classList.add('hidden');
+            }, 300);
+        }
+
+        function openDownloadModal() {
+            showCustomAlert("박상진 님의 실무형 Primavera P6 공정 검토 기술 보고서가 포함된 고급 영문/국문 이력서 PDF 가상 다운로드 프로세스입니다.");
+        }
+
+        // Project Database Directory
+        const projectDataDirectory = {
+            'proj-consulting': {
+                title: 'EY한영 민관합작투자(PPP) 도로 사업 리스크 및 타당성 분석 자문',
+                tag: 'Business Consulting & Finance',
+                sub: 'EY한영 자본 프로젝트 자문본부 인턴 과제',
+                desc: '총 연장 42km, 총 사업비 1조 2천억 규모의 민관합작(PPP) 도로 인프라의 양허 계약 분석 및 금융 조달 구조 시나리오를 자문 검증했습니다.',
+                bullets: [
+                    'BTO-a(손실보전형) 모델 하의 통행량 변동 분석 및 기획재정부 기준에 의거한 사회적 할인율 적용 장기 재무 가치 산정',
+                    '시공 리스크와 금리 충격에 대한 시나리오별 NPV/IRR 변동성 다이어그램 작성을 통한 자본 보호 한도 산출',
+                    '이사회 보고용 MECE 기반의 시장 분석, 규제 타당성, 현물 출재 한계 관련 최종 보고 프레젠테이션 수립 리드',
+                    '건설 기간 중 자본 유치 구조 및 지분 투자 신탁의 안전 보증 확약 조건 정량 요약 가이드 작성'
+                ]
+            },
+            'proj-pm': {
+                title: 'Primavera P6 기반 복합 환승 센터 및 초대형 터널공사 공정 제어 최적화',
+                tag: 'Project Control & Scheduling',
+                sub: 'Primavera P6 전문 실무 연계 프로젝트 우수 결과',
+                desc: '지하 인프라 복합 환승 센터 공사의 교차 공종(구조, 전기, 굴착) 간의 간섭 공기 리스크를 Primavera P6를 이용해 통합 예측하고 제어 모델을 설계했습니다.',
+                bullets: [
+                    'WBS 수준 4 단계의 1,800여 개 액티비티 네트워크(FS, SS, SF 관계) 및 자원 프로필 상세 할당 구현',
+                    'Critical Path(주공정선)의 연쇄 유동 여유 시간(Total Float) 변동 폭 추적으로 토공사 지연 시의 후행 터널 굴착 마일스톤에 미치는 지연 체인 전파 예측',
+                    'EVM(획득가치관리) 프레임워크를 연동하여 자재 수급 지연에 따르는 누적 예측 원가(EAC) 보정 모델링',
+                    '지연 클레임에 대비하여 Primavera 지연영향분석(Delay Impact Analysis) 프로세스 이행 모델 수립'
+                ]
+            },
+            'proj-risk': {
+                title: '건설 개발 신탁의 책임준공 리스크 및 인프라 초과손실 재보험(XOL) 최적 설계',
+                tag: 'Construction Trust & Reinsurance',
+                sub: '금융 및 리스크 공학 트랙 연구 모델',
+                desc: '국내 부동산/건설 개발 신탁사의 핵심 우발 채무인 책임준공보증 리스크와, 초대형 교량·해양 에너지 인프라에 발생 가능한 극한 기상이변 손실 전가 구조를 도식화한 리스크 공학 설계입니다.',
+                bullets: [
+                    '차입형/관리형 신탁 구조에서 시공사 신용 위험(부도 확률)에 대응한 자본 준공 책임 적정 충당 수수료 요율 분석',
+                    '대재해(CAT) 손실 시나리오 기반, Probable Maximum Loss(PML) 수치를 가상 구조물 한도 데이터로 시뮬레이션 산출',
+                    '글로벌 재보험사로 전가할 원수사 리스크 보유 한도(Retention Level)와 다단계 초과손실재보험(XOL Excess Layers) 적정 배분 최적 모델 구현',
+                    '신탁 자산 보호를 위한 보증 자재 위험 관리 장치 구성에 관한 정책 권고사항 제시'
+                ]
+            }
+        };
+
+        function showProjectDetail(projKey) {
+            const data = projectDataDirectory[projKey];
+            if (!data) return;
+
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-content');
+            
+            document.getElementById('modal-title').innerText = data.title;
+            
+            let bulletHtml = '';
+            data.bullets.forEach(b => {
+                bulletHtml += `<li class="text-sm text-slate-300 flex items-start gap-2.5">
+                    <span class="text-premium-gold mt-1">•</span>
+                    <span>${b}</span>
+                </li>`;
+            });
+
+            document.getElementById('modal-body').innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-extrabold text-premium-gold bg-slate-950 border border-premium-gold/30 px-3 py-1.5 rounded-lg uppercase tracking-wider">${data.tag}</span>
+                        <span class="text-xs text-slate-400 font-semibold">${data.sub}</span>
+                    </div>
+                    <p class="text-sm text-slate-200 leading-relaxed font-semibold">
+                        ${data.desc}
+                    </p>
+                    <div class="border-t border-slate-800 pt-5">
+                        <h4 class="text-xs uppercase font-extrabold text-slate-400 mb-3 tracking-widest">수행 세부 역할 및 검증 성과</h4>
+                        <ul class="space-y-3">
+                            ${bulletHtml}
+                        </ul>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('opacity-100');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-content');
+            
+            modal.classList.remove('opacity-100');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Contact submit simulation
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            
+            document.getElementById('contact-form').reset();
+
+            const toast = document.getElementById('toast-message');
+            const toastText = document.getElementById('toast-text');
+            toastText.innerText = "제안해 주신 리스크 시나리오 및 채용 관련 메시지가 전송 완료되었습니다! (가상 데모)";
+            
+            toast.classList.remove('translate-y-24');
+            toast.classList.add('translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0');
+                toast.classList.add('translate-y-24');
+            }, 4000);
+        }
+
+        // --- Primavera P6 & Reinsurance Canvas Engine ---
+        const canvas = document.getElementById('control-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            const rect = canvas.parentNode.getBoundingClientRect();
+            canvas.width = rect.width * window.devicePixelRatio;
+            canvas.height = rect.height * window.devicePixelRatio;
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+            updateControlsSimulator();
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        function updateControlsSimulator() {
+            const BAC = parseFloat(document.getElementById('proj-bac').value);
+            const SPI = parseFloat(document.getElementById('proj-spi').value);
+            const PMLFactor = parseFloat(document.getElementById('proj-pml').value) / 100;
+            const Retention = parseFloat(document.getElementById('proj-retention').value) / 100;
+
+            // Compute EAC (Estimate at Completion) = BAC / SPI
+            const EAC = BAC / SPI;
+
+            // Compute Risk Values
+            const totalPML = BAC * PMLFactor;
+            const retainedRisk = totalPML * Retention;
+            const cededRisk = totalPML * (1 - Retention);
+
+            // Update DOM Results
+            document.getElementById('val-proj-bac').innerText = BAC.toLocaleString() + ' 억 원';
+            
+            let spiText = SPI.toFixed(2);
+            if (SPI < 1.0) {
+                spiText += ' (공기 지연 리스크)';
+                document.getElementById('val-proj-spi').className = 'font-mono text-red-400 font-bold';
+            } else if (SPI > 1.0) {
+                spiText += ' (공기 단축 및 효율 증대)';
+                document.getElementById('val-proj-spi').className = 'font-mono text-emerald-400 font-bold';
+            } else {
+                spiText += ' (On-Time)';
+                document.getElementById('val-proj-spi').className = 'font-mono text-premium-gold font-bold';
+            }
+            document.getElementById('val-proj-spi').innerText = spiText;
+            document.getElementById('val-proj-pml').innerText = (PMLFactor * 100).toFixed(0) + ' %';
+            document.getElementById('val-proj-retention').innerText = (Retention * 100).toFixed(0) + ' %';
+
+            document.getElementById('res-proj-eac').innerText = EAC.toFixed(0) + ' 억 원';
+            document.getElementById('res-proj-ceded').innerText = cededRisk.toFixed(0) + ' 억 원';
+
+            // Draw Analytics Screen
+            drawRiskDiagram(BAC, SPI, totalPML, retainedRisk, cededRisk);
+        }
+
+        function drawRiskDiagram(BAC, SPI, PML, retained, ceded) {
+            const w = canvas.width / window.devicePixelRatio;
+            const h = canvas.height / window.devicePixelRatio;
+            const EAC = BAC / SPI; // 추가: drawRiskDiagram 내부에 실시간 완공 예측원가(EAC) 변수 바인딩하여 ReferenceError 해결
+
+            ctx.clearRect(0, 0, w, h);
+
+            const isLight = document.documentElement.classList.contains('light');
+            const bgText = isLight ? '#1e293b' : '#cbd5e1';
+            const borderLines = isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)';
+
+            // Draw Background Grid Lines representing Primavera P6 Gantt intervals
+            ctx.strokeStyle = borderLines;
+            ctx.lineWidth = 1;
+            const count = 10;
+            for (let i = 0; i <= count; i++) {
+                const lx = 40 + i * ((w - 80) / count);
+                ctx.beginPath();
+                ctx.moveTo(lx, 20);
+                ctx.lineTo(lx, h - 30);
+                ctx.stroke();
+            }
+
+            // --- Draw Component 1: EVM Progress Timeline (P6 Track) ---
+            ctx.fillStyle = isLight ? '#0f172a' : '#ffffff';
+            ctx.font = 'bold 10px Inter, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText("PRIMAVERA P6 PROJECT TRACK", 40, 30);
+
+            // Baseline Progress Bar (BAC Reference)
+            const trackY1 = 45;
+            const barW = w - 160;
+            ctx.fillStyle = '#1e293b';
+            ctx.fillRect(40, trackY1, barW, 14);
+            ctx.strokeStyle = '#334155';
+            ctx.strokeRect(40, trackY1, barW, 14);
+
+            ctx.fillStyle = '#475569';
+            ctx.fillRect(40, trackY1, barW * 0.7, 14); // Standard progress
+
+            ctx.fillStyle = '#94a3b8';
+            ctx.font = '9px Inter, sans-serif';
+            ctx.fillText("계획 선행률 (Planned Baseline)", 45, trackY1 + 10);
+
+            // Actual Progress Bar (EAC Scaled)
+            const trackY2 = 65;
+            ctx.fillStyle = '#1e293b';
+            ctx.fillRect(40, trackY2, barW, 14);
+            ctx.strokeRect(40, trackY2, barW, 14);
+
+            // The width changes based on performance (SPI)
+            const progressRatio = Math.min(0.7 * SPI, 1.0);
+            const actualColor = SPI < 1.0 ? '#ef4444' : '#10b981';
+            ctx.fillStyle = actualColor;
+            ctx.fillRect(40, trackY2, barW * progressRatio, 14);
+
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText(`실제 획득율 (Earned Performance) : SPI ${SPI.toFixed(2)}`, 45, trackY2 + 10);
+
+            // --- Draw Component 2: Reinsurance Risk Layering Stack ---
+            const riskStartY = 110;
+            ctx.fillStyle = isLight ? '#0f172a' : '#ffffff';
+            ctx.font = 'bold 10px Inter, sans-serif';
+            ctx.fillText("REINSURANCE FINANCIAL TRANSFER LAYERS (재보험 손실 전가 모델)", 40, riskStartY);
+
+            // Total Risk Box (PML)
+            const boxX = 40;
+            const boxY = riskStartY + 15;
+            const boxW = 160;
+            const boxH = h - boxY - 40;
+
+            // Draw PML container
+            ctx.fillStyle = '#111827';
+            ctx.fillRect(boxX, boxY, boxW, boxH);
+            ctx.strokeStyle = '#d4af37';
+            ctx.lineWidth = 1.5;
+            ctx.strokeRect(boxX, boxY, boxW, boxH);
+
+            // Draw internal divisions (Ceded vs Retained)
+            const totalRatio = PML / BAC; // how big is the risk
+            const riskHeight = boxH * Math.min(totalRatio * 1.5, 1.0); // visual scale
+            const riskYStart = boxY + (boxH - riskHeight);
+
+            // Draw total loss event block
+            ctx.fillStyle = 'rgba(239, 68, 68, 0.15)';
+            ctx.fillRect(boxX, riskYStart, boxW, riskHeight);
+
+            // Division Line for Retention
+            const retentionHeight = riskHeight * (retained / PML);
+            const borderY = riskYStart + (riskHeight - retentionHeight);
+
+            // Ceded Layer (Reinsurance) - Upper layer
+            ctx.fillStyle = 'rgba(5, 150, 105, 0.5)';
+            ctx.fillRect(boxX, riskYStart, boxW, riskHeight - retentionHeight);
+            
+            // Retained Layer (Own share) - Lower layer
+            ctx.fillStyle = 'rgba(212, 175, 55, 0.5)';
+            ctx.fillRect(boxX, borderY, boxW, retentionHeight);
+
+            // Labels for Layering
+            ctx.fillStyle = bgText;
+            ctx.font = 'bold 9px Inter, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(`재보험 전가 (Ceded Layer): ${(ceded).toFixed(0)}억`, boxX + boxW + 15, riskYStart + ((riskHeight - retentionHeight)/2) + 4);
+            ctx.fillText(`원수 자가보유 (Retention): ${(retained).toFixed(0)}억`, boxX + boxW + 15, borderY + (retentionHeight/2) + 4);
+
+            // Total MFL/PML label on left
+            ctx.save();
+            ctx.translate(boxX - 10, boxY + boxH/2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillStyle = '#ef4444';
+            ctx.font = '9px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(`최대 예상 재해 손실 (PML): ${(PML).toFixed(0)}억`, 0, 0);
+            ctx.restore();
+
+            // Right Financial Commentary text box on Canvas
+            const commX = boxX + boxW + 15;
+            const commY = riskStartY + 25;
+            ctx.fillStyle = isLight ? '#f1f5f9' : '#0f172a';
+            ctx.fillRect(commX, commY, w - commX - 40, h - commY - 40);
+            ctx.strokeStyle = '#334155';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(commX, commY, w - commX - 40, h - commY - 40);
+
+            ctx.fillStyle = isLight ? '#1e293b' : '#e2e8f0';
+            ctx.font = '8.5px Inter, sans-serif';
+            ctx.fillText("Portfolio Risk Analysis:", commX + 10, commY + 15);
+            ctx.font = '8px Inter, sans-serif';
+            ctx.fillStyle = '#94a3b8';
+            ctx.fillText(`- Projected EAC: ${BAC.toFixed(0)}억 → ${EAC.toFixed(0)}억`, commX + 10, commY + 30);
+            ctx.fillText(`- Catastrophe Loss Target: ${PML.toFixed(0)}억`, commX + 10, commY + 42);
+            ctx.fillText(`- Reinsured Security: ${(ceded/PML*100).toFixed(0)}% Ceded`, commX + 10, commY + 54);
+            ctx.fillText(`- Capital Risk Guarded (Net): ${(retained).toFixed(0)}억 제한`, commX + 10, commY + 66);
+        }
+
+        window.onload = function () {
+            resizeCanvas();
+            filterProjects('all');
+        }
+    </script>
+</body>
+</html>
